@@ -3,20 +3,27 @@
 #include <vector>
 using namespace std;
 
-enum Kind
+struct Coord
 {
-  empty,
-  food,
-  snake
+  int x;
+  int y;
 };
 
-struct Token
+
+struct Snake
 {
-  Kind kind;
   int id;
-  bool head;
-  bool tail;
-  int size;
+  int health;
+  vector<Coord> body;
 };
 
-vector<Token> draw(int width, int height);
+
+struct Board
+{
+  int turn;
+  int height;
+  int width;
+  Snake you;
+  vector<Coord> food;
+  vector<Snake> snakes;
+};

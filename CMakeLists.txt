@@ -9,4 +9,5 @@ add_executable( binary ./src/main.cpp ./src/Board.cpp )
 find_package (Threads)
 
 add_subdirectory( ./libs/HttpLib )
-target_link_libraries( binary httplib ${CMAKE_THREAD_LIBS_INIT} )
+add_subdirectory( ./libs/JsonLib )
+target_link_libraries( binary httplib jsonlib ${CMAKE_THREAD_LIBS_INIT} )
